@@ -21,8 +21,8 @@ Example 2: 302609005500730000000000900000940000000000109000057060008500006000000
 Example 3: 000075400000000008080190000300001060000000034000068170204000603900000020530200000  
 
 ```
-sudoku = Sudoku.new(board_string) # => create a new sudoku object
-sudoku.solve! # => return a set of 81 numbers of a solved sudoku
+sudoku = Sudoku.new(board_string)  # => create a new sudoku object
+sudoku.solve!                      # => return a string of 81 numbers of a solved sudoku
 ```
 
 Print the Sudoku board
