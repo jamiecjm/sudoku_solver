@@ -9,15 +9,21 @@ In a sudoku game, some of the squares will already have numbers. Usually there w
 ## Usage
 #### Run the sudoku solver from the terminal
 
-```ruby game.rb```
+```
+ruby game.rb
+```
 
 #### Using the Sudoku model directly
 
 board_string is a valid set of 81 numbers of sudoku
 
-```sudoku = Sudoku.new(board_string) # => create a new sudoku object
-sudoku.solve! # => return a set of 81 numbers of a solved sudoku```
+```
+sudoku = Sudoku.new(board_string) # => create a new sudoku object
+sudoku.solve! # => return a set of 81 numbers of a solved sudoku
+```
 
 Print the Sudoku board
 
-```sudoku.board```
+```
+sudoku.board
+```
