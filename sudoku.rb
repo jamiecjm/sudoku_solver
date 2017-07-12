@@ -45,7 +45,7 @@ class Sudoku
 	      end
 	      # display dotted lines for every 3 rows 
 	      puts "----------------------" if row_counter%3 == 0
-	    end 
+	    end
     end
 
   	# solve! will solve grids that don't require guessing
@@ -93,15 +93,16 @@ class Sudoku
 		  			1.upto(9) {|x| solutions.delete(x) if box.include?(x)}
 		  			# if solutions contain only 1 number, the current grid will be replaced with the number
 		  			@sudoku[rowindex][cellindex] = solutions[0] if solutions.length == 1
-		  			board
 		  		end
 		  	end
-		  	break if @sudoku == @sudokudup
+		  	if @sudoku == @sudokudup
+		  		guess
+		  		break
+		  	end
 		end
     end
 
     # utlize recursion to solve sudoku
-    # guess is a recursive function
     def guess
     	# loop 1
 	    while true do
@@ -110,6 +111,7 @@ class Sudoku
 		        	# *******************************************************
 		        	# this part same as solve! method
 		            col = @sudoku.transpose[cellindex]
+		            # return to previous loop (loop 2) if sudoku board is completely solved
 		            return if !@sudoku.flatten.include?(0)
 		            next if cell != 0
 		            solutions=(1..9).to_a
@@ -134,11 +136,10 @@ class Sudoku
 		        	while true do
 		        		# replace current grid with a number with in solutions
 			            @sudoku[rowindex][cellindex] = solutions[solutions_index]
-			            board
 			            # call itself
 			            guess
 			            # code start from this line if no solution found from previous recursion (from return if solutions == [])
-			            # break the recusion if sudoku board is completely solved
+			            # break the loop if sudoku board is completely solved
 			            break if !@sudoku.flatten.include?(0) 
 			            # change index to the next number in solutions
 			            solutions_index += 1
