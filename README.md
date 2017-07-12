@@ -7,15 +7,16 @@ From Wikipedia's definition, Sudoku is a logic-based, combinatorial number-place
 In a sudoku game, some of the squares will already have numbers. Usually there will be enough initial numbers to guarantee a unique solution.
 
 ## Usage
-Run the sudoku solver from the terminal
+#### Run the sudoku solver from the terminal
 
 ```ruby game.rb```
 
-Using the Sudoku model directly, board_string is a valid set of 81 numbers of sudoku
+#### Using the Sudoku model directly
 
-```sudoku = Sudoku.new(board_string) # => create a new sudoku object```
+board_string is a valid set of 81 numbers of sudoku
 
-```sudoku.solve! # => return a set of 81 numbers of a solved sudoku```
+```sudoku = Sudoku.new(board_string) # => create a new sudoku object
+sudoku.solve! # => return a set of 81 numbers of a solved sudoku```
 
 Print the Sudoku board
 
