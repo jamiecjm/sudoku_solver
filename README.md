@@ -27,3 +27,9 @@ Print the Sudoku board
 ```
 sudoku.board
 ```
+
+#### Run the test from the terminal
+
+```
+rspec rspec_test.rb
+```
