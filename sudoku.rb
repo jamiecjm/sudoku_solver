@@ -97,6 +97,7 @@ class Sudoku
 		  	end
 		  	if @sudoku == @sudokudup
 		  		guess
+		  		return @sudoku.flatten.join
 		  		break
 		  	end
 		end
